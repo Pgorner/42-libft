@@ -10,6 +10,17 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/* FUNCTION EXPLANATION: 
+** Function searches at most n characters to locate the first occurrence in the string pointed 
+** to by big of the sequence of characters (excluding the terminating null character) in the 
+** string pointed to by little.
+** 
+** Return values:
+** 0				||  string not found
+** pointer to the located string if it was found
+** returns big if little is empty
+*/ 
+
 ft_strnstr(const char *big, const char *little, size_t n);
 {
     size_t i;

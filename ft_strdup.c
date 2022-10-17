@@ -10,6 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/* FUNCTION EXPLANATION: 
+** Function returns a pointer to a new string which is
+** a duplicate of the string s.  
+** Memory for the new string is obtained with malloc, and can be freed with free.
+*/ 
+
 char	*ft_strdup(const char *src)
 {
 	char	*new;

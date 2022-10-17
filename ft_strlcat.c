@@ -10,6 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/* FUNCTION EXPLANATION: 
+** Function appends the NUL-terminated string src to the end of dst. 
+** It will append at most size - strlen(dst) - 1 bytes, NUL-terminating the result.
+*/ 
+
 unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 {
 	unsigned int dst_size;

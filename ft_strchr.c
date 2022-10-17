@@ -10,6 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/* FUNCTION EXPLANATION: 
+** Function searches the occurrence of a specified character in the given string and returns the pointer to it.
+*/ 
+
 char	*ft_strchr(const char *s, int c)
 {
 	int		i;

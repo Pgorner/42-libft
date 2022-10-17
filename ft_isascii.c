@@ -10,6 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/* FUNCTION EXPLANATION: 
+** Function checks if int c is within the ASCII table
+*/ 
+
 int	ft_isascii(int c)
 {
 	if (c >= 0 && c <= 127)

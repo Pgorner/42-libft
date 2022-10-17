@@ -10,6 +10,15 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/* FUNCTION EXPLANATION: 
+** Function compares two character strings ( str1 and str2 ). 
+** 
+** Return values:
+** 0				||  s1 and s2 are equal
+** Negative integer	||  The stopping character in s1 was less than the stopping character in s2
+** Positive integer	||  The stopping character in s1 was greater than the stopping character in s2
+*/ 
+
 int		ft_strncmp(char *s1, char *s2, unsigned int n)
 {
 	unsigned int	i;

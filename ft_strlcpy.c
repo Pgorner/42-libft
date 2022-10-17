@@ -10,7 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+/* FUNCTION EXPLANATION: 
+** Function copies the source string(character array) to the destination string(character array).
+*/ 
 
 char	*ft_strcpy(char *dst, const char *src)
 {

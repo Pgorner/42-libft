@@ -10,6 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/* FUNCTION EXPLANATION: 
+** Function checks if int c is digit
+
 int	ft_isdigit(int c)
 {
 	if (c >= '0' && c <= '9')

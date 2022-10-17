@@ -10,6 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/* FUNCTION EXPLANATION: 
+** Function checks if int c is alphanumerical
+*/ 
+
 #include "libft.h"
 
 int	ft_isalnum(int c)

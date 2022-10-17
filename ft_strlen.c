@@ -10,6 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/* FUNCTION EXPLANATION: 
+** Function outputs string length
+*/ 
+
 unsigned int    ft_strlen(const char *str)
 {
 	int i;

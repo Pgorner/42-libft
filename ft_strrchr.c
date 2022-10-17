@@ -10,6 +10,15 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/* FUNCTION EXPLANATION: 
+** Function searches for the last occurence of c in string.
+** 
+** Return values:
+** 0				||  c not found
+** pointer to the located position if it was found
+*/ 
+
+
 char	*ft_strrchr(const char *s, int c)
 {
 	int		i;
