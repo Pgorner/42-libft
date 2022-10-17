@@ -10,20 +10,21 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strchr(const char *s, int c)
+ft_strstr(const char *big, const char *little, size_t n);
 {
-	int		i;
+    int i;
 
-	i = 0;
-	if (s == NULL)
-		return (NULL);
-	while (s[i])
-	{
-		if (s[i] == (char)c)
-			return ((char *)&s[i]);
-		i++;
-	}
-	if (s[i] == (char)c)
-		return ((char *)&s[i]);
-	return (NULL);
+    i = 0;
+
+    if (*little == NULL)
+        return (*big);
+    
+
+    while( *big[i] != '/0' && *little[i] != '/0' && i <= n)
+        if (*big[i] == *little [i])
+            while (*big[i] == *little [i])
+                i++;
+                if (little[i] == '/0')
+                    return 
+
 }
