@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pgorner < pgorner@student.42heilbronn.d    +#+  +:+       +#+        */
+/*   By: pgorner <pgorner@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 11:02:56 by pgorner           #+#    #+#             */
-/*   Updated: 2022/10/17 11:02:56 by pgorner          ###   ########.fr       */
+/*   Updated: 2022/10/17 18:10:19 by pgorner          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 ** returns big if little is empty
 */ 
 
-ft_strnstr(const char *big, const char *little, size_t n);
+int ft_strnstr(const char *big, const char *little, size_t n)
 {
     size_t i;
     size_t j;
