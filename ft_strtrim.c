@@ -6,7 +6,7 @@
 /*   By: pgorner <pgorner@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 20:26:16 by pgorner           #+#    #+#             */
-/*   Updated: 2022/10/17 21:18:12 by pgorner          ###   ########.fr       */
+/*   Updated: 2022/10/17 22:01:29 by pgorner          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,21 @@ int ft_findstart(char const *s1, char const *set)
     return(j);
 }
 
+int ft_findend(char const *s1, char const *set)
+{
+    int i;
+    int j;
+    i = (ft_strlen(s1));
+    j = 0;
+    
+    while (j < i)
+    {
+            j--;
+            if (ft_strrchr(set, s1[j]) = 0)
+                break;
+    }
+    return(j);
+}
 
 char *ft_strtrim(char const *s1, char const *set)
 {
@@ -58,10 +73,16 @@ char *ft_strtrim(char const *s1, char const *set)
     start = ft_findstart(s1 , set);
     end = ft_findend(s1 , set);
     str = (char*)malloc(sizeof(*s1) * (end - start + 1));
+    i = start;
+
+    if (str == 0)
+        return NULL;
+
+    while (i < end)
+    {
+        str[i] = s1[i];
+        i++;    
+    }
     i = 0;
-    
-
-
-    
-    return (str);    
+    return (str);
 }
