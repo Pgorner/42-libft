@@ -6,7 +6,7 @@
 /*   By: pgorner <pgorner@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 10:18:06 by pgorner           #+#    #+#             */
-/*   Updated: 2022/10/18 13:05:06 by pgorner          ###   ########.fr       */
+/*   Updated: 2022/10/18 15:16:41 by pgorner          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,20 +21,16 @@
 ** the stopping character in s2
 */
 
+#include <stddef.h>
+
 int	ft_strncmp(char *s1, char *s2, unsigned int n)
 {
-	unsigned int	i;
-	int				r;
+	size_t	i;
 
 	i = 0;
-	r = 0;
-	while ((s1[i] || s2[i]) && r == 0 && i < n)
-	{
-		if (s1[i] != s2[i])
-		{
-			r = s1[i] - s2[i];
-		}
+	if (n == 0)
+		return (0);
+	while (s1[i] != '\0' && s1[i] == s2[i] && i < n - 1)
 		i++;
-	}
-	return (r);
+	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 }
