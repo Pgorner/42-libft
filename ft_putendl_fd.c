@@ -1,16 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pgorner <pgorner@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/18 20:10:02 by pgorner           #+#    #+#             */
-/*   Updated: 2022/10/18 23:12:09 by pgorner          ###   ########.fr       */
+/*   Created: 2022/10/18 23:01:31 by pgorner           #+#    #+#             */
+/*   Updated: 2022/10/18 23:22:33 by pgorner          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
+#include <stdlib.h>
 
 unsigned int	ft_strlen(const char *str)
 {
@@ -24,7 +25,10 @@ unsigned int	ft_strlen(const char *str)
 	return (i);
 }
 
-void	ft_putstr_fd(char *s, int fd)
+void	ft_putendl_fd(char *s, int fd)
 {
-	write(fd, s, ft_strlen(s));
+	char	*str;
+
+	str = (char *)malloc(sizeof(*s) * (ft_strlen(s) + 1));
+	write(fd, str, (ft_strlen(s)+2));
 }
