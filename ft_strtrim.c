@@ -6,83 +6,32 @@
 /*   By: pgorner <pgorner@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 20:26:16 by pgorner           #+#    #+#             */
-/*   Updated: 2022/10/17 22:01:29 by pgorner          ###   ########.fr       */
+/*   Updated: 2022/10/18 13:20:16 by pgorner          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stddef.h>
+#include <stdlib.h>
+#include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+char	*ft_strtrim(char const	*s1, char const	*set)
 {
-	int		i;
-	char	*t;
+	size_t	start;
+	size_t	end;
+	char	*str;
 
-	i = 0;
-	t = NULL;
-	while (s[i] != '\0')
+	str = 0;
+	if (s1 != 0 && set != 0)
 	{
-		if (s[i] == (char)c)
-			t = ((char *)&s[i]);
-		i++;
+		start = 0;
+		end = ft_strlen(s1);
+		while (s1[start] && ft_strchr(set, s1[start]))
+			start++;
+		while (s1[end - 1] && ft_strchr(set, s1[end - 1]) && end > start)
+			end--;
+		str = (char *)malloc(sizeof(char) * (end - start + 1));
+		if (str)
+			ft_strlcpy(str, &s1[start], end - start + 1);
 	}
-	if (s[i] == (char)c)
-		t = ((char *)&s[i]);
-	return (t);
-}   
-
-int ft_findstart(char const *s1, char const *set)
-{
-    int i;
-    int j;
-    i = ft_strlen(s1);
-    j = 0;
-    
-    while (j < i)
-    {
-        while (!s1[j])
-        {
-        if (ft_strrchr(set, s1[j++]) = 0)
-            break;
-        }
-    }
-    return(j);
-}
-
-int ft_findend(char const *s1, char const *set)
-{
-    int i;
-    int j;
-    i = (ft_strlen(s1));
-    j = 0;
-    
-    while (j < i)
-    {
-            j--;
-            if (ft_strrchr(set, s1[j]) = 0)
-                break;
-    }
-    return(j);
-}
-
-char *ft_strtrim(char const *s1, char const *set)
-{
-    int start;
-    int end;
-    char *str;
-    int i;
-    
-    start = ft_findstart(s1 , set);
-    end = ft_findend(s1 , set);
-    str = (char*)malloc(sizeof(*s1) * (end - start + 1));
-    i = start;
-
-    if (str == 0)
-        return NULL;
-
-    while (i < end)
-    {
-        str[i] = s1[i];
-        i++;    
-    }
-    i = 0;
-    return (str);
+	return (str);
 }

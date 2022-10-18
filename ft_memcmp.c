@@ -1,41 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pgorner <pgorner@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/12 10:08:01 by pgorner           #+#    #+#             */
-/*   Updated: 2022/10/18 13:03:36 by pgorner          ###   ########.fr       */
+/*   Created: 2022/10/18 12:17:51 by pgorner           #+#    #+#             */
+/*   Updated: 2022/10/18 12:47:47 by pgorner          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/* FUNCTION EXPLANATION: 
-** Function copies the source string(character array) to the destination 
-** string(character array).
-*/
-
 #include <stddef.h>
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	size_t	i;
+	const unsigned char	*ss1;
+	const unsigned char	*ss2;
+	size_t				i;
 
 	i = 0;
-	if (dstsize == 0)
+	ss1 = (const unsigned char *)s1;
+	ss2 = (const unsigned char *)s2;
+	while (i < n)
 	{
-		while (src[i])
-			i++;
-		return (i);
-	}
-	while (i < dstsize - 1 && src[i] != '\0')
-	{
-		dst[i] = src[i];
+		if (ss1[i] != ss2[i])
+			return (ss1[i] - ss2[i]);
 		i++;
 	}
-	if (i < dstsize)
-		dst[i] = '\0';
-	while (src[i] != '\0')
-		i++;
-	return (i);
+	return (0);
 }

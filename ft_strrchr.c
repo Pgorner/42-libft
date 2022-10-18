@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pgorner < pgorner@student.42heilbronn.d    +#+  +:+       +#+        */
+/*   By: pgorner <pgorner@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 10:25:45 by pgorner           #+#    #+#             */
-/*   Updated: 2022/10/17 10:25:45 by pgorner          ###   ########.fr       */
+/*   Updated: 2022/10/18 14:04:12 by pgorner          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,23 +16,38 @@
 ** Return values:
 ** 0				||  c not found
 ** pointer to the located position if it was found
-*/ 
+*/
 
+#include <stdlib.h>
+
+unsigned int	ft_strlen(const char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i] != '\0')
+	{
+		i++;
+	}
+	return (i);
+}
 
 char	*ft_strrchr(const char *s, int c)
 {
-	int		i;
-	char	*t;
+	char	*last;
+	char	find;
+	size_t	i;
 
-	i = 0;
-	t = NULL;
-	while (s[i] != '\0')
+	last = (char *)s;
+	find = (char)c;
+	i = ft_strlen(s);
+	while (i > 0)
 	{
-		if (s[i] == (char)c)
-			t = ((char *)&s[i]);
-		i++;
+		if (last[i] == find)
+			return (last + i);
+		i--;
 	}
-	if (s[i] == (char)c)
-		t = ((char *)&s[i]);
-	return (t);
-}   
+	if (last[i] == find)
+		return (last);
+	return (0);
+}

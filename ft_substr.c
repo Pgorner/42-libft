@@ -6,7 +6,7 @@
 /*   By: pgorner <pgorner@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 18:37:56 by pgorner           #+#    #+#             */
-/*   Updated: 2022/10/17 19:58:21 by pgorner          ###   ########.fr       */
+/*   Updated: 2022/10/18 13:22:12 by pgorner          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,25 +18,23 @@
 ** Return values:
 ** 0				||  string empty // allocation failed
 ** substring of string starting at start with length len
-*/ 
+*/
 
-char *ft_substr(char const *s, unsigned int start, size_t len)
+#include <stddef.h>
+#include <stdlib.h>
+
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-    size_t i;
-    size_t j;
-    char *str;
+	size_t	i;
+	size_t	j;
+	char	*str;
 
-    i = 0;
-    j = 0;
-    str = (char*)malloc(sizeof(*s) * (len + 1));
-
-    if (!s)
-	    return (NULL);
-
-	if (!str)
-		return (NULL);
-
-    while (s[i])
+	i = 0;
+	j = 0;
+	str = (char *)malloc(sizeof(*s) * (len + 1));
+	if (!s || !str)
+		return (0);
+	while (s[i])
 	{
 		if (i >= start && j < len)
 		{

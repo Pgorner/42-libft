@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pgorner < pgorner@student.42heilbronn.d    +#+  +:+       +#+        */
+/*   By: pgorner <pgorner@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 10:18:06 by pgorner           #+#    #+#             */
-/*   Updated: 2022/10/12 10:18:06 by pgorner          ###   ########.fr       */
+/*   Updated: 2022/10/18 13:05:06 by pgorner          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,18 @@
 ** 
 ** Return values:
 ** 0				||  s1 and s2 are equal
-** Negative integer	||  The stopping character in s1 was less than the stopping character in s2
-** Positive integer	||  The stopping character in s1 was greater than the stopping character in s2
-*/ 
+** Negative integer	||  The stopping character in s1 was less than 
+** the stopping character in s2
+** Positive integer	||  The stopping character in s1 was greater than 
+** the stopping character in s2
+*/
 
-int		ft_strncmp(char *s1, char *s2, unsigned int n)
+int	ft_strncmp(char *s1, char *s2, unsigned int n)
 {
 	unsigned int	i;
 	int				r;
 
+	i = 0;
 	r = 0;
 	while ((s1[i] || s2[i]) && r == 0 && i < n)
 	{

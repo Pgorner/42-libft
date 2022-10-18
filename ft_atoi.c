@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pgorner < pgorner@student.42heilbronn.d    +#+  +:+       +#+        */
+/*   By: pgorner <pgorner@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 10:16:38 by pgorner           #+#    #+#             */
-/*   Updated: 2022/10/17 10:16:38 by pgorner          ###   ########.fr       */
+/*   Updated: 2022/10/18 12:33:58 by pgorner          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,24 +17,24 @@
 **
 ** Return value:
 ** Returns the integer representation of a string
-*/ 
+*/
 
-int ft_atoi(const char *str)
+int	ft_atoi(const char *str)
 {
-    int i;
-    int nb;
-    int n;
+	int	i;	
+	int	nb;	
+	int	n;
 
-    i = 0;
-    nb = 0;
-    n = 0;
-    while ((str[i] >= '\t' && str[i] <= '\r') || str[i] == ' ')
-        i++;
-    if (str[i] == '-')
-        n = -1;
-    if (str[i] == '-' || str[i] == '+')
-        i++;
-    while (str[i] >= '0' && str[i] <= '9')
+	i = 0;
+	nb = 0;
+	n = 0;
+	while ((str[i] >= '\t' && str[i] <= '\r') || str[i] == ' ')
+		i++;
+	if (str[i] == '-')
+		n = -1;
+	if (str[i] == '-' || str[i] == '+')
+		i++;
+	while (str[i] >= '0' && str[i] <= '9')
 	{
 		nb = nb * 10 + (str[i] - '0');
 		if (nb < 0 && n == -1 && nb != -2147483648)

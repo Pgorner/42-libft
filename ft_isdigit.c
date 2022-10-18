@@ -6,7 +6,7 @@
 /*   By: pgorner <pgorner@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 09:56:08 by pgorner           #+#    #+#             */
-/*   Updated: 2022/10/17 18:07:51 by pgorner          ###   ########.fr       */
+/*   Updated: 2022/10/18 12:38:28 by pgorner          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@
 int	ft_isdigit(int c)
 {
 	if (c >= '0' && c <= '9')
-		{
-			return (1);
-		}
+	{
+		return (1);
+	}
 	return (0);
 }
