@@ -5,21 +5,20 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: pgorner < pgorner@student.42heilbronn.d    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/17 12:37:21 by pgorner           #+#    #+#             */
-/*   Updated: 2022/10/17 12:37:21 by pgorner          ###   ########.fr       */
+/*   Created: 2022/10/17 11:02:56 by pgorner           #+#    #+#             */
+/*   Updated: 2022/10/17 11:02:56 by pgorner          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memchr(const void *s, int c, size_t n)
+void *ft_memset(void *b, int c, size_t len)
 {
-	size_t			i;
+	unsigned char *p;
 
-	i = 0;
-	while (i < n)
+	p = (unsigned char *)b;
+	while (len > 0)
 	{
-		if (*((unsigned char *)s + i) == (unsigned char)c)
-			return ((unsigned char *)s + i);
-		i++;
+		*(p++) = (unsigned char)c;
+		len--;
 	}
-	return (NULL);
+	return (b);
 }
