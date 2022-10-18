@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pgorner <pgorner@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/17 20:03:40 by pgorner           #+#    #+#             */
-/*   Updated: 2022/10/18 20:26:57 by pgorner          ###   ########.fr       */
+/*   Created: 2022/10/18 19:21:21 by pgorner           #+#    #+#             */
+/*   Updated: 2022/10/18 20:33:33 by pgorner          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,27 +24,22 @@ unsigned int	ft_strlen(const char *str)
 	return (i);
 }
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	char	*str;
 	size_t	i;
-	size_t	j;
+	char	*str;
 
-	j = 0;
+	if (s == NULL)
+		return (NULL);
 	i = 0;
-	str = (char *)malloc(sizeof(*s1) * (ft_strlen(s1) + ft_strlen(s2) + 1));
+	str = (char *)malloc(sizeof(*s) * (ft_strlen(s) + 1));
 	if (str == NULL)
 		return (NULL);
-	while (s1[i] != '\0')
+	while (s[i] != '\0')
 	{
-		str[i] = s1[i];
+		str[i] = f(i, s[i]);
 		i++;
 	}
-	while (s2[j] != '\0')
-	{
-		str[i + j] = s2[j];
-		j++;
-	}
-	str[i + j] = '\0';
+	str[i] = '\0';
 	return (str);
 }

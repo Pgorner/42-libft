@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pgorner <pgorner@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/17 20:03:40 by pgorner           #+#    #+#             */
-/*   Updated: 2022/10/18 20:26:57 by pgorner          ###   ########.fr       */
+/*   Created: 2022/10/18 20:28:42 by pgorner           #+#    #+#             */
+/*   Updated: 2022/10/18 20:33:01 by pgorner          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include <unistd.h>
 
 unsigned int	ft_strlen(const char *str)
 {
@@ -24,27 +24,30 @@ unsigned int	ft_strlen(const char *str)
 	return (i);
 }
 
-char	*ft_strjoin(char const *s1, char const *s2)
+void	ft_putchar_fd(char c, int fd)
 {
-	char	*str;
-	size_t	i;
-	size_t	j;
+	write(fd, &c, 1);
+}
 
-	j = 0;
-	i = 0;
-	str = (char *)malloc(sizeof(*s1) * (ft_strlen(s1) + ft_strlen(s2) + 1));
-	if (str == NULL)
-		return (NULL);
-	while (s1[i] != '\0')
+void	ft_putstr_fd(char *s, int fd)
+{
+	write(fd, s, ft_strlen(s));
+}
+
+void	ft_putnbr_fd(int n, int fd)
+{
+	if (n == -2147483648)
+		ft_putstr_fd("-2147483648", fd);
+	else if (n < 0)
 	{
-		str[i] = s1[i];
-		i++;
+		ft_putchar_fd('-', fd);
+		ft_putnbr_fd(-n, fd);
 	}
-	while (s2[j] != '\0')
+	else if (n >= 10)
 	{
-		str[i + j] = s2[j];
-		j++;
+		ft_putnbr_fd(n / 10, fd);
+		ft_putchar_fd(n % 10 + '0', fd);
 	}
-	str[i + j] = '\0';
-	return (str);
+	else
+		ft_putchar_fd(n + '0', fd);
 }
