@@ -6,13 +6,13 @@
 /*   By: pgorner <pgorner@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 23:47:31 by pgorner           #+#    #+#             */
-/*   Updated: 2022/10/17 23:47:34 by pgorner          ###   ########.fr       */
+/*   Updated: 2022/10/22 15:21:57 by pgorner          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
-# define LIBFT_H
-# include <stddef.h>
+#define LIBFT_H
+#include <stddef.h>
 // =============================================================================
 //								  ctype
 // =============================================================================
@@ -98,11 +98,11 @@ char		*ft_strtrim(const char *str, const char *set);
 // Outputs the char c to the file descriptor fd.
 void		ft_putchar_fd(char c, int fd);
 // Outputs the string str to the file descriptor fd followed by a new line.
-void		ft_putendl_fd(const char *s, int fd);
+void	ft_putendl_fd(const char *s, int fd);
 // Adds a signle digit as its character representaion to the array
 void		ft_putnbr_fd(int n, int fd);
 // Outputs the string str to the file descriptor fd.
-void		ft_putstr_fd(const char *s, int fd);
+void		ft_putstr_fd(char *s, int fd);
 // =============================================================================
 //								  math
 // =============================================================================
@@ -119,25 +119,25 @@ void		ft_bzero(void *mem, size_t n);
 // =============================================================================
 typedef struct s_list
 {
-    void		    *content;
+    void	*content;
     struct s_list   *next;
 }				   t_list;
 // Returns a freeable initialised link
-t_list      *ft_lstnew(const void *content);
+t_list  *ft_lstnew(const void *content);
 // Adds "new_node" at the beginning of the list
-void		ft_lstadd_front(t_list **lst, t_list *new_node);
+void	ft_lstadd_front(t_list **lst, t_list *new_node);
 // Returns the number of nodes
-int		 ft_lstsize(t_list *lst);
+int	ft_lstsize(t_list *lst);
 // Returns the last node of the list
-t_list      *ft_lstlast(t_list *lst);
+t_list	*ft_lstlast(t_list *lst);
 // Adds "new_node" at the end of the list
-void		ft_lstadd_back(t_list **lst, t_list *new_node);
+void	ft_lstadd_back(t_list **lst, t_list *new_node);
 // Calls function "del" on the content of "alst" and free the link
-void		ft_lstdelone(t_list *lst, void (*del)(void *));
+void	ft_lstdelone(t_list *lst, void (*del)(void *));
 // Deletes and frees the given node and every successor of that node
-void		ft_lstclear(t_list **lst, void (*del)(void *));
+void	ft_lstclear(t_list **lst, void (*del)(void *));
 // Applies the function on the content of every node
-void		ft_lstiter(t_list *lst, void (*f)(void *));
+void	ft_lstiter(t_list *lst, void (*f)(void *));
 // Creates a new list by applying "f" to every element of "lst"
-t_list      *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 #endif

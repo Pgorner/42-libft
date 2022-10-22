@@ -6,7 +6,7 @@
 /*   By: pgorner <pgorner@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 15:57:12 by pgorner           #+#    #+#             */
-/*   Updated: 2022/10/18 12:36:20 by pgorner          ###   ########.fr       */
+/*   Updated: 2022/10/22 15:39:11 by pgorner          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,24 +20,21 @@
 #include <stddef.h>
 #include <stdlib.h>
 
-void	ft_bzero(void *s, size_t n)
-{
-	unsigned char	*ptr;
-
-	ptr = (unsigned char *)s;
-	while (n-- > 0)
-	{
-		*(ptr++) = 0;
-	}
-}
-
 void	*ft_calloc(size_t count, size_t size)
 {
-	void	*ptr;
+	char	*memory;
+	size_t	i;
 
-	ptr = malloc(count * size);
-	if (ptr == 0)
-		return (ptr);
-	ft_bzero(ptr, size * count);
-	return (ptr);
+	i = 0;
+	memory = malloc(count * size);
+	if (SIZE_MAX / size < count)
+		return (NULL);
+	if (memory == NULL)
+		return (NULL);
+	while (i < count * size)
+	{
+		memory[i] = 0;
+		i++;
+	}
+	return (memory);
 }
