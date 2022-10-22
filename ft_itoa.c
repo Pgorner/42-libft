@@ -6,48 +6,53 @@
 /*   By: pgorner <pgorner@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 22:09:22 by pgorner           #+#    #+#             */
-/*   Updated: 2022/10/18 20:05:27 by pgorner          ###   ########.fr       */
+/*   Updated: 2022/10/22 15:14:04 by pgorner          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include <stdio.h>
 #include "libft.h"
 
-char	*ft_strcpy(char *dest, char *src)
+size_t	ft_len(int nb)
 {
-	int	i;
+	int	len;
 
-	i = 0;
-	while (src[i] != '\0')
+	len = 0;
+	if (nb <= 0)
+		len++;
+	while (nb)
 	{
-		dest[i] = src[i];
-		i++;
+		len++;
+		nb = nb / 10;
 	}
-	dest[i] = '\0';
-	return (dest);
+	return (len);
 }
 
 char	*ft_itoa(int n)
 {
+	int		len;
 	char	*str;
+	long	nb;
 
-	(str = (char *)malloc(sizeof(char) * 2));
+	len = ft_len(n);
+	nb = n;
+	str = malloc(sizeof(char) * len + 1);
 	if (!str)
 		return (NULL);
-	if (n == -2147483648)
-		return (ft_strcpy(str, "-2147483648"));
-	if (n < 0)
+	if (nb < 0)
 	{
 		str[0] = '-';
-		str[1] = '\0';
-		str = ft_strjoin(str, ft_itoa(-n));
+		nb = -nb;
 	}
-	else if (n >= 10)
-		str = ft_strjoin(ft_itoa(n / 10), ft_itoa(n % 10));
-	else if (n < 10 && n >= 0)
+	if (nb == 0)
+		str[0] = '0';
+	str[len--] = '\0';
+	while (nb)
 	{
-		str[0] = n + '0';
-		str[1] = '\0';
+		str[len] = nb % 10 + '0';
+		len--;
+		nb = nb / 10;
 	}
 	return (str);
 }

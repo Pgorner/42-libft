@@ -6,23 +6,12 @@
 /*   By: pgorner <pgorner@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 20:10:02 by pgorner           #+#    #+#             */
-/*   Updated: 2022/10/18 23:12:09 by pgorner          ###   ########.fr       */
+/*   Updated: 2022/10/20 14:32:03 by pgorner          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-
-unsigned int	ft_strlen(const char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i] != '\0')
-	{
-		i++;
-	}
-	return (i);
-}
+#include "libft.h"
 
 void	ft_putstr_fd(char *s, int fd)
 {
