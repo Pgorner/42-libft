@@ -6,24 +6,27 @@
 /*   By: pgorner <pgorner@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 16:09:58 by pgorner           #+#    #+#             */
-/*   Updated: 2022/10/22 17:44:21 by pgorner          ###   ########.fr       */
+/*   Updated: 2022/10/22 18:35:32 by pgorner          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
+
 #include "libft.h"
+
 #include <stdlib.h>
+
 #include <stdio.h>
 
-char	*ft_strnncpy(const char *src, unsigned int start, unsigned int end) //makes string according to start and end of a word
+char	*ft_strnncpy(const char *src, int start, int end)
 {
 	char	*str;
-	int i;
-	int j;
+	int		i;
+	int		j;
 
 	j = start;
 	i = 0;
-	str = malloc(sizeof(char) * ((end-start) + 1));
+	str = malloc (sizeofchar) * ((end - start) + 1));
 	if (!str)
 		return (NULL);
 	while (j < end)
@@ -32,10 +35,10 @@ char	*ft_strnncpy(const char *src, unsigned int start, unsigned int end) //makes
 	return (str);
 }
 
-int ft_countword (char const *s, char c) //countswords
+int	ft_countword(char const *s, char c)
 {
-	int i;
-	int trigger;
+	int	i;
+	int	trigger;
 
 	i = 0;
 	trigger = 0;
@@ -53,12 +56,18 @@ int ft_countword (char const *s, char c) //countswords
 	return (i);
 }
 
-char **ft_split(char const *s, char c)
+int ft_mid()
 {
-	int i;
-	int j;
-	char **tab;
-	int index;
+
+	return
+}
+
+char	**ft_split(char const *s, char c)
+{
+	int		i;
+	int		j;
+	char	**tab;
+	int		index;
 
 	j = 0;
 	i = 0;
@@ -72,8 +81,14 @@ char **ft_split(char const *s, char c)
 			index = i;
 		else if ((s[i] == c || i == ft_strlen(s)) && index >= 0)
 		{
-			tab[j++] = ft_strnncpy(s, index, i);
-			index = -1;
+		tab[j] = ft_strnncpy(s, index, i);
+		if (!tab[j])
+			{
+				free (tab);
+				return (NULL);
+			}
+		j++;
+		index = -1;
 		}
 		i++;
 	}
