@@ -1,4 +1,5 @@
 NAME	=	libft.a
+
 all:
 	@gcc -Wall -Wextra -Werror -c ft_*.c libft.h
 	@ar rc $(NAME) $? ft_*.o libft.h

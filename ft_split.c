@@ -6,17 +6,11 @@
 /*   By: pgorner <pgorner@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 16:09:58 by pgorner           #+#    #+#             */
-/*   Updated: 2022/10/22 18:35:32 by pgorner          ###   ########.fr       */
+/*   Updated: 2022/10/24 19:22:26 by pgorner          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
 #include "libft.h"
-
-#include <stdlib.h>
-
-#include <stdio.h>
 
 char	*ft_strnncpy(const char *src, int start, int end)
 {
@@ -26,12 +20,11 @@ char	*ft_strnncpy(const char *src, int start, int end)
 
 	j = start;
 	i = 0;
-	str = malloc (sizeofchar) * ((end - start) + 1));
+	str = ft_calloc((sizeof(char)), ((end - start) + 1));
 	if (!str)
 		return (NULL);
 	while (j < end)
 		str[i++] = src[j++];
-	str[i] = '\0';
 	return (str);
 }
 
@@ -56,15 +49,23 @@ int	ft_countword(char const *s, char c)
 	return (i);
 }
 
-int ft_mid()
+static char	**ft_free(char **tab)
 {
+	int	i;
 
-	return
+	i = 0;
+	while (tab[i])
+	{
+		free(tab[i]);
+		i++;
+	}
+	free (tab);
+	return (NULL);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	int		i;
+	size_t	i;
 	int		j;
 	char	**tab;
 	int		index;
@@ -72,7 +73,7 @@ char	**ft_split(char const *s, char c)
 	j = 0;
 	i = 0;
 	index = -1;
-	tab = malloc((ft_countword(s, c) + 1) * sizeof(char *));
+	tab = ft_calloc((ft_countword(s, c) + 1), sizeof(char *));
 	if (!s || !tab)
 		return (NULL);
 	while (i <= ft_strlen(s))
@@ -81,17 +82,13 @@ char	**ft_split(char const *s, char c)
 			index = i;
 		else if ((s[i] == c || i == ft_strlen(s)) && index >= 0)
 		{
-		tab[j] = ft_strnncpy(s, index, i);
-		if (!tab[j])
-			{
-				free (tab);
-				return (NULL);
-			}
-		j++;
-		index = -1;
+			tab[j] = ft_strnncpy(s, index, i);
+			if (!tab[j])
+				return (ft_free(tab));
+			index = -1;
+			j++;
 		}
 		i++;
 	}
-	tab[j] = 0;
 	return (tab);
 }
