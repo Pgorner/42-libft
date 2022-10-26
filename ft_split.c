@@ -6,7 +6,7 @@
 /*   By: pgorner <pgorner@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 16:09:58 by pgorner           #+#    #+#             */
-/*   Updated: 2022/10/25 20:51:18 by pgorner          ###   ########.fr       */
+/*   Updated: 2022/10/26 15:59:15 by pgorner          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ static char	**ft_free(char **tab)
 	return (NULL);
 }
 
-void	assign_values(int *i, int *j, int *index)
+void	assign_values(size_t *i, int *j, int *index)
 {
 	*i = 0;
 	*j = 0;
@@ -73,7 +73,7 @@ void	assign_values(int *i, int *j, int *index)
 
 char	**ft_split(char const *s, char c)
 {
-	int		i;
+	size_t	i;
 	int		j;
 	char	**tab;
 	int		index;

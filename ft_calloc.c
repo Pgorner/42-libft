@@ -6,7 +6,7 @@
 /*   By: pgorner <pgorner@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 15:57:12 by pgorner           #+#    #+#             */
-/*   Updated: 2022/10/22 15:39:11 by pgorner          ###   ########.fr       */
+/*   Updated: 2022/10/26 17:36:55 by pgorner          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,24 +17,17 @@
 ** Returns the array
 */
 
-#include <stddef.h>
-#include <stdlib.h>
+#include "libft.h"
 
 void	*ft_calloc(size_t count, size_t size)
 {
-	char	*memory;
-	size_t	i;
+	void	*memory;
 
-	i = 0;
 	memory = malloc(count * size);
-	if (SIZE_MAX / size < count)
+	if (!memory)
 		return (NULL);
-	if (memory == NULL)
+	if (size > 0 && (SIZE_MAX / size) < count)
 		return (NULL);
-	while (i < count * size)
-	{
-		memory[i] = 0;
-		i++;
-	}
+	ft_bzero(memory, count * size);
 	return (memory);
 }
