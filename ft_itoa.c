@@ -6,12 +6,10 @@
 /*   By: pgorner <pgorner@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 22:09:22 by pgorner           #+#    #+#             */
-/*   Updated: 2022/10/27 17:49:57 by pgorner          ###   ########.fr       */
+/*   Updated: 2022/10/27 19:50:14 by pgorner          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <stdio.h>
 #include "libft.h"
 
 size_t	ft_len(int nb)
