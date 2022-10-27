@@ -6,7 +6,7 @@
 /*   By: pgorner <pgorner@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 18:49:04 by pgorner           #+#    #+#             */
-/*   Updated: 2022/10/25 16:46:46 by pgorner          ###   ########.fr       */
+/*   Updated: 2022/10/27 17:27:26 by pgorner          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	if (!f || !del)
 		return (NULL);
 	new_lst = NULL;
-	while (lst)
+	while ((lst && !f) || (lst && !del))
 	{
 		new_node = ft_lstnew(f(lst->content));
 		if (new_node == NULL)
