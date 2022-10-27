@@ -6,7 +6,7 @@
 /*   By: pgorner <pgorner@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 18:37:56 by pgorner           #+#    #+#             */
-/*   Updated: 2022/10/26 21:50:43 by pgorner          ###   ########.fr       */
+/*   Updated: 2022/10/27 14:34:32 by pgorner          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,17 @@
 
 char	*ft_substr(const char *s, unsigned int start, size_t len)
 {
-	size_t	s_len;
-	size_t	size;
 	char	*sub;
 
 	if (!s)
 		return (NULL);
-	s_len = ft_strlen(s);
-	if (start > s_len)
+	if (start > ft_strlen(s))
 		return (ft_strdup(""));
-	if (start + len > s_len)
-		len = s_len - start;
-	size = len + 1;
-	sub = (char *) malloc(size * sizeof(char));
+	if (len > ft_strlen(s))
+		len = ft_strlen(s);
+	if (start + len > ft_strlen(s))
+		len = ft_strlen(s) - start;
+	sub = (char *) malloc((len + 1) * sizeof(char));
 	if (!sub)
 		return (NULL);
 	ft_memcpy(sub, s + start, len);

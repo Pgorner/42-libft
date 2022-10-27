@@ -6,7 +6,7 @@
 /*   By: pgorner <pgorner@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 20:26:16 by pgorner           #+#    #+#             */
-/*   Updated: 2022/10/27 13:20:35 by pgorner          ###   ########.fr       */
+/*   Updated: 2022/10/27 13:50:29 by pgorner          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ char	*ft_strtrim(char const	*s1, char const	*set)
 	char	*str;
 
 	str = 0;
+	if (s1[0] == 0)
+		return (ft_strdup(""));
 	if (s1 != 0 && set != 0)
 	{
 		start = 0;
