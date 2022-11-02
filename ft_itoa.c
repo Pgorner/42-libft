@@ -6,10 +6,12 @@
 /*   By: pgorner <pgorner@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 22:09:22 by pgorner           #+#    #+#             */
-/*   Updated: 2022/10/27 19:50:14 by pgorner          ###   ########.fr       */
+/*   Updated: 2022/10/22 15:14:04 by pgorner          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
+#include <stdio.h>
 #include "libft.h"
 
 size_t	ft_len(int nb)
@@ -37,7 +39,6 @@ char	*ft_itoa(int n)
 	nb = n;
 	str = malloc(sizeof(char) * len + 1);
 	if (!str)
-		free(str);
 		return (NULL);
 	if (nb < 0)
 	{

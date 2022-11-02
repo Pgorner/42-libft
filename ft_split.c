@@ -6,7 +6,7 @@
 /*   By: pgorner <pgorner@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 16:09:58 by pgorner           #+#    #+#             */
-/*   Updated: 2022/10/26 15:59:15 by pgorner          ###   ########.fr       */
+/*   Updated: 2022/11/02 14:56:36 by pgorner          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,11 +64,14 @@ static char	**ft_free(char **tab)
 	return (NULL);
 }
 
-void	assign_values(size_t *i, int *j, int *index)
+int	assign_values(size_t *i, int *j, int *index, char const *s)
 {
 	*i = 0;
 	*j = 0;
 	*index = -1;
+	if (!s)
+		return (1);
+	return (0);
 }
 
 char	**ft_split(char const *s, char c)
@@ -78,9 +81,10 @@ char	**ft_split(char const *s, char c)
 	char	**tab;
 	int		index;
 
-	assign_values(&i, &j, &index);
+	if (assign_values(&i, &j, &index, s) == 1)
+		return (NULL);
 	tab = ft_calloc((ft_countword(s, c) + 1) * sizeof(char *), 1);
-	if (!s || !tab)
+	if (!tab)
 		return (NULL);
 	while (i <= ft_strlen(s))
 	{
@@ -88,14 +92,13 @@ char	**ft_split(char const *s, char c)
 			index = i;
 		else if ((s[i] == c || i == ft_strlen(s)) && index >= 0)
 		{
-		tab[j] = ft_strnncpy(s, index, i);
+			tab[j] = ft_strnncpy(s, index, i);
 			if (!tab[j])
 				return (ft_free(tab));
-		j++;
-		index = -1;
+			j++;
+			index = -1;
 		}
 		i++;
 	}
-	tab[j] = 0;
 	return (tab);
 }

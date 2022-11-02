@@ -6,7 +6,7 @@
 /*   By: pgorner <pgorner@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 18:49:04 by pgorner           #+#    #+#             */
-/*   Updated: 2022/10/27 19:46:46 by pgorner          ###   ########.fr       */
+/*   Updated: 2022/10/31 18:03:33 by pgorner          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 		if (new_node == NULL)
 		{
 			ft_lstclear(&new_lst, del);
+			free(new_lst);
 			return (NULL);
 		}
 		ft_lstadd_back(&new_lst, new_node);
