@@ -6,7 +6,7 @@
 /*   By: pgorner <pgorner@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 23:47:31 by pgorner           #+#    #+#             */
-/*   Updated: 2022/12/18 14:13:30 by pgorner          ###   ########.fr       */
+/*   Updated: 2022/12/18 16:11:46 by pgorner          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 # include <stddef.h>
 # include <string.h>
 # include <unistd.h>
+# include "./get_next_line/get_next_line.h"
 
 // =============================================================================
 //								  ctype
