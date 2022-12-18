@@ -6,17 +6,21 @@
 /*   By: pgorner <pgorner@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 23:47:31 by pgorner           #+#    #+#             */
-/*   Updated: 2022/11/02 15:03:54 by pgorner          ###   ########.fr       */
+/*   Updated: 2022/12/18 14:13:30 by pgorner          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 0
+# endif
 
-# include <stddef.h>
 # include <stdio.h>
 # include <stdlib.h>
+# include <stddef.h>
 # include <string.h>
+# include <unistd.h>
 
 // =============================================================================
 //								  ctype
@@ -145,4 +149,11 @@ void	ft_lstclear(t_list **lst, void (*del)(void *));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 // Creates a new list by applying "f" to every element of "lst"
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+// =============================================================================
+//								get_next_line
+// =============================================================================
+char	*get_next_line(int fd);
+char	*ft_read(int fd, char *buf);
+char	*ft_line(char *buf);
+char	*ft_next(char *buf);
 #endif
