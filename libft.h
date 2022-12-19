@@ -6,14 +6,14 @@
 /*   By: pgorner <pgorner@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 23:47:31 by pgorner           #+#    #+#             */
-/*   Updated: 2022/12/19 14:05:04 by pgorner          ###   ########.fr       */
+/*   Updated: 2022/12/19 14:20:50 by pgorner          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 0
+#  define BUFFER_SIZE 1
 # endif
 
 # include <stdio.h>
