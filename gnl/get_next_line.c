@@ -6,7 +6,7 @@
 /*   By: pgorner <pgorner@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 16:14:49 by pgorner           #+#    #+#             */
-/*   Updated: 2023/01/06 15:17:16 by pgorner          ###   ########.fr       */
+/*   Updated: 2023/01/06 15:17:39 by pgorner          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ char	*ft_line(char *buf)
 		buf[j] = res[j];
 		j++;
 	}
-	free(res);
+/* 	free(res); */
 	return (buf);
 }
 
