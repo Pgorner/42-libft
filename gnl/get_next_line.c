@@ -5,11 +5,10 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: pgorner <pgorner@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/06 16:14:49 by pgorner           #+#    #+#             */
-/*   Updated: 2023/01/06 15:18:27 by pgorner          ###   ########.fr       */
+/*   Created: 2022/11/02 17:35:29 by pgorner           #+#    #+#             */
+/*   Updated: 2023/01/06 15:36:27 by pgorner          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "get_next_line.h"
 #include "stdio.h"
