@@ -6,14 +6,14 @@
 /*   By: pgorner <pgorner@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 17:36:12 by pgorner           #+#    #+#             */
-/*   Updated: 2022/12/19 14:23:50 by pgorner          ###   ########.fr       */
+/*   Updated: 2023/01/06 15:07:31 by pgorner          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 1
+#  define BUFFER_SIZE 100
 # endif
 
 # include <unistd.h>
