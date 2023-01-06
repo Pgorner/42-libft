@@ -6,7 +6,7 @@
 /*   By: pgorner <pgorner@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 17:36:12 by pgorner           #+#    #+#             */
-/*   Updated: 2023/01/06 15:36:34 by pgorner          ###   ########.fr       */
+/*   Updated: 2023/01/06 15:37:44 by pgorner          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ size_t	ft_strlen(const char *str);
 // Strchr
 char	*ft_strchr(const char *s, int c);
 // Strjoin
-char	*ft_strjoin(char *s1, char *s2);
+char	*ft_strjoinfr(char *s1, char *s2);
 // Bzero
 void	ft_bzero(void *s, size_t n);
 #endif

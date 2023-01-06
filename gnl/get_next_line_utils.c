@@ -6,7 +6,7 @@
 /*   By: pgorner <pgorner@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 17:36:10 by pgorner           #+#    #+#             */
-/*   Updated: 2022/11/16 15:36:18 by pgorner          ###   ########.fr       */
+/*   Updated: 2023/01/06 15:37:27 by pgorner          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ size_t	ft_strlen(const char *str)
 	return (i);
 }
 
-char	*ft_strjoin(char *s1, char *s2)
+char	*ft_strjoinfr(char *s1, char *s2)
 {
 	char	*str;
 	size_t	i;

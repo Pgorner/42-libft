@@ -6,7 +6,7 @@
 /*   By: pgorner <pgorner@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 17:35:29 by pgorner           #+#    #+#             */
-/*   Updated: 2023/01/06 15:36:27 by pgorner          ###   ########.fr       */
+/*   Updated: 2023/01/06 15:37:39 by pgorner          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ char	*ft_read(int fd, char *buf)
 		byte = read(fd, str, BUFFER_SIZE);
 		if (byte == -1)
 			return (free(buf), free(str), NULL);
-		buf = ft_strjoin(buf, str);
+		buf = ft_strjoinfr(buf, str);
 		if (ft_strchr(buf, '\n'))
 			break ;
 	}
