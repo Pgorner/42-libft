@@ -6,7 +6,7 @@
 /*   By: pgorner <pgorner@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 17:36:12 by pgorner           #+#    #+#             */
-/*   Updated: 2023/01/06 15:37:44 by pgorner          ###   ########.fr       */
+/*   Updated: 2023/01/06 15:39:36 by pgorner          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #  define BUFFER_SIZE 1
 # endif
 
+#include "../libft.h"
 # include <unistd.h>
 # include <stdlib.h>
 # include <stddef.h>
@@ -32,14 +33,6 @@ char	*ft_next(char *buf);
 char	*ft_line(char *buf);
 // Reads the content of fd
 char	*ft_read(int fd, char *buf);
-// Calloc
-void	*ft_calloc(size_t count, size_t size);
-// Strlen
-size_t	ft_strlen(const char *str);
-// Strchr
-char	*ft_strchr(const char *s, int c);
 // Strjoin
 char	*ft_strjoinfr(char *s1, char *s2);
-// Bzero
-void	ft_bzero(void *s, size_t n);
 #endif
