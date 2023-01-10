@@ -6,13 +6,13 @@
 /*   By: pgorner <pgorner@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 16:09:58 by pgorner           #+#    #+#             */
-/*   Updated: 2023/01/10 18:54:10 by pgorner          ###   ########.fr       */
+/*   Updated: 2023/01/10 18:55:34 by pgorner          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnncpy(const char *src, int start, int end)
+char	*ft_strnncpy(const char *src, size_t start, size_t end)
 {
 	char	*str;
 	size_t		i;
@@ -64,7 +64,7 @@ static char	**ft_free(char **tab)
 	return (NULL);
 }
 
-int	assign_values(size_t *i, int *j, int *index, char const *s)
+int	assign_values(size_t *i, size_t *j, size_t *index, char const *s)
 {
 	*i = 0;
 	*j = 0;
