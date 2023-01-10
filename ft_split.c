@@ -6,17 +6,17 @@
 /*   By: pgorner <pgorner@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 16:09:58 by pgorner           #+#    #+#             */
-/*   Updated: 2023/01/10 18:55:34 by pgorner          ###   ########.fr       */
+/*   Updated: 2023/01/10 19:01:13 by pgorner          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnncpy(const char *src, size_t start, size_t end)
+char	*ft_strnncpy(const char *src, int start, int end)
 {
 	char	*str;
-	size_t		i;
-	size_t		j;
+	int		i;
+	int		j;
 
 	j = start;
 	i = 0;
@@ -31,8 +31,8 @@ char	*ft_strnncpy(const char *src, size_t start, size_t end)
 
 int	ft_countword(char const *s, char c)
 {
-	size_t	i;
-	size_t	trigger;
+	int	i;
+	int	trigger;
 
 	i = 0;
 	trigger = 0;
@@ -52,7 +52,7 @@ int	ft_countword(char const *s, char c)
 
 static char	**ft_free(char **tab)
 {
-	size_t	i;
+	int	i;
 
 	i = 0;
 	while (tab[i])
@@ -64,7 +64,7 @@ static char	**ft_free(char **tab)
 	return (NULL);
 }
 
-int	assign_values(size_t *i, size_t *j, size_t *index, char const *s)
+int	assign_values(size_t *i, int *j, int *index, char const *s)
 {
 	*i = 0;
 	*j = 0;
@@ -76,10 +76,10 @@ int	assign_values(size_t *i, size_t *j, size_t *index, char const *s)
 
 char	**ft_split(char const *s, char c)
 {
-	size_t		i;
-	size_t		j;
-	size_t		index;
+	size_t	i;
+	int		j;
 	char	**tab;
+	int		index;
 
 	if (assign_values(&i, &j, &index, s) == 1)
 		return (NULL);
