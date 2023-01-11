@@ -6,7 +6,7 @@
 /*   By: pgorner <pgorner@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 16:09:58 by pgorner           #+#    #+#             */
-/*   Updated: 2023/01/11 14:38:02 by pgorner          ###   ########.fr       */
+/*   Updated: 2023/01/11 14:38:41 by pgorner          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ size_t	ft_countword(char const *s, char c)
 
 static char	**ft_free(char **tab)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
 	while (tab[i])
