@@ -6,7 +6,7 @@
 /*   By: pgorner <pgorner@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 16:09:58 by pgorner           #+#    #+#             */
-/*   Updated: 2023/01/11 17:32:49 by pgorner          ###   ########.fr       */
+/*   Updated: 2023/01/11 17:41:57 by pgorner          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,7 @@ char	**ft_split(char const *s, char c)
 	{
 		if (s[i] != c && index < 0)
 			index = i;
-		else if ((s[i] == c || s[i] == '\0') && index >= 0)
+		else if ((s[i] == c || i == ft_strlen(s)) && index >= 0)
 		{
 			tab[j] = ft_strnncpy(s, index, i);
 			if (!tab[j])
