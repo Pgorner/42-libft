@@ -6,13 +6,13 @@
 /*   By: pgorner <pgorner@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 16:09:58 by pgorner           #+#    #+#             */
-/*   Updated: 2023/01/11 15:15:34 by pgorner          ###   ########.fr       */
+/*   Updated: 2023/01/11 17:31:55 by pgorner          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnncpy(const char *src, int start, size_t end)
+char	*ft_strnncpy(const char *src, int start, int end)
 {
 	char	*str;
 	size_t		i;
@@ -86,11 +86,11 @@ char	**ft_split(char const *s, char c)
 	tab = ft_calloc((ft_countword(s, c) + 1) * sizeof(char *), 1);
 	if (!tab)
 		return (NULL);
-	while (i <= ft_strlen(s))
+	while (s[i] != '\0')
 	{
 		if (s[i] != c && index < 0)
 			index = i;
-		else if ((s[i] == c || i == ft_strlen(s)) && index >= 0)
+		else if ((s[i] == c || s[i] == '\0') && index >= 0)
 		{
 			tab[j] = ft_strnncpy(s, index, i);
 			if (!tab[j])
