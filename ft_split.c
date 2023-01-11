@@ -6,13 +6,13 @@
 /*   By: pgorner <pgorner@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 16:09:58 by pgorner           #+#    #+#             */
-/*   Updated: 2023/01/11 15:14:55 by pgorner          ###   ########.fr       */
+/*   Updated: 2023/01/11 15:15:34 by pgorner          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnncpy(const char *src, int start, int end)
+char	*ft_strnncpy(const char *src, int start, size_t end)
 {
 	char	*str;
 	size_t		i;
