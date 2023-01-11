@@ -6,7 +6,7 @@
 /*   By: pgorner <pgorner@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 16:09:58 by pgorner           #+#    #+#             */
-/*   Updated: 2023/01/11 14:34:33 by pgorner          ###   ########.fr       */
+/*   Updated: 2023/01/11 14:35:05 by pgorner          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ static char	**ft_free(char **tab)
 	return (NULL);
 }
 
-int	assign_values(size_t *i, size_t *j, int *index, char const *s)
+int	assign_values(size_t *i, size_t *j, size_t *index, char const *s)
 {
 	*i = 0;
 	*j = 0;
