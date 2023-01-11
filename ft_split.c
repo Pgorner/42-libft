@@ -6,7 +6,7 @@
 /*   By: pgorner <pgorner@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 16:09:58 by pgorner           #+#    #+#             */
-/*   Updated: 2023/01/11 17:31:55 by pgorner          ###   ########.fr       */
+/*   Updated: 2023/01/11 17:32:49 by pgorner          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 char	*ft_strnncpy(const char *src, int start, int end)
 {
 	char	*str;
-	size_t		i;
-	size_t		j;
+	int		i;
+	int		j;
 
 	j = start;
 	i = 0;
