@@ -6,17 +6,17 @@
 /*   By: pgorner <pgorner@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 16:09:58 by pgorner           #+#    #+#             */
-/*   Updated: 2023/01/11 14:35:54 by pgorner          ###   ########.fr       */
+/*   Updated: 2023/01/11 14:38:02 by pgorner          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnncpy(const char *src, int start, int end)
+char	*ft_strnncpy(const char *src, size_t start, size_t end)
 {
 	char	*str;
-	int		i;
-	int		j;
+	size_t		i;
+	size_t		j;
 
 	j = start;
 	i = 0;
@@ -29,10 +29,10 @@ char	*ft_strnncpy(const char *src, int start, int end)
 	return (str);
 }
 
-int	ft_countword(char const *s, char c)
+size_t	ft_countword(char const *s, char c)
 {
-	int	i;
-	int	trigger;
+	size_t	i;
+	size_t	trigger;
 
 	i = 0;
 	trigger = 0;
@@ -52,7 +52,7 @@ int	ft_countword(char const *s, char c)
 
 static char	**ft_free(char **tab)
 {
-	size_t	i;
+	int	i;
 
 	i = 0;
 	while (tab[i])
