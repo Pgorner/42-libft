@@ -56,6 +56,15 @@ SRC = 	ft_memset.c \
 		ft_putnbr_fd.c \
 		gnl/get_next_line.c \
 		gnl/get_next_line_utils.c \
+		printf/ft_checkletter.c \
+		printf/ft_flag.c \
+		printf/ft_hex.c \
+		printf/ft_nbr.c \
+		printf/ft_pointer.c \
+		printf/ft_printf.c \
+		printf/ft_printstr.c \
+		printf/ft_putchar.c \
+		printf/ft_uns.c \
 
 SRC_B =	ft_lstnew.c \
 		ft_lstadd_front.c \
