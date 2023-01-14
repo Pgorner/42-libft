@@ -6,7 +6,7 @@
 /*   By: pgorner <pgorner@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 23:47:31 by pgorner           #+#    #+#             */
-/*   Updated: 2023/01/14 14:46:09 by pgorner          ###   ########.fr       */
+/*   Updated: 2023/01/14 14:50:12 by pgorner          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -155,4 +155,16 @@ char	*get_next_line(int fd);
 char	*ft_read(int fd, char *buf);
 char	*ft_line(char *buf);
 char	*ft_next(char *buf);
+// =============================================================================
+//								ft_printf
+// =============================================================================
+int		ft_hex(unsigned int num, const char flag);
+int		ft_flag(va_list args, const char flag);
+int		ft_pointer(unsigned long long ptr);
+int		ft_printf(const char *noot, ...);
+int		ft_checkletter(const char *noot);
+int		ft_uns(unsigned int n);
+int		ft_printstr(char *str);
+int		ft_putchar(int noot);
+int		ft_nbr(int n);
 #endif
