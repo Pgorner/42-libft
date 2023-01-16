@@ -6,7 +6,7 @@
 /*   By: pgorner <pgorner@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 23:47:31 by pgorner           #+#    #+#             */
-/*   Updated: 2023/01/14 14:50:12 by pgorner          ###   ########.fr       */
+/*   Updated: 2023/01/16 13:47:14 by pgorner          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,7 @@ char	*ft_strdup(const char *str);
 // Returns a freeable copy of str starting at start with size len
 char	*ft_substr(char const *str, unsigned int start, size_t len);
 // Returns a freeable string which is the concatination of str1 and str2
-char	*ft_strjoin(char const *str1, char const *str2);
+char	*ft_strjoin(char *str1, char *str2);
 // Returns a freeable string which is f applied to every char + index of str
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 // Returns a freeable NULL terminated array of freeable strings obtained by
