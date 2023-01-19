@@ -6,7 +6,7 @@
 /*   By: pgorner <pgorner@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 16:09:58 by pgorner           #+#    #+#             */
-/*   Updated: 2023/01/11 18:14:13 by pgorner          ###   ########.fr       */
+/*   Updated: 2023/01/19 21:12:27 by pgorner          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ char	*ft_strnncpy(const char *src, int start, int end)
 	return (str);
 }
 
-size_t	ft_countword(char const *s, char c)
+int	ft_countword(char const *s, char c)
 {
 	int	i;
 	int	trigger;
@@ -86,11 +86,11 @@ char	**ft_split(char const *s, char c)
 	tab = ft_calloc((ft_countword(s, c) + 1) * sizeof(char *), 1);
 	if (!tab)
 		return (NULL);
-	while (s[i] != '\0')
+	while (i <= ft_strlen(s))
 	{
 		if (s[i] != c && index < 0)
 			index = i;
-		else if ((s[i] == c || s[i] == '\0') && index >= 0)
+		else if ((s[i] == c || i == ft_strlen(s)) && index >= 0)
 		{
 			tab[j] = ft_strnncpy(s, index, i);
 			if (!tab[j])
