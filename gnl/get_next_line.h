@@ -6,7 +6,7 @@
 /*   By: pgorner <pgorner@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 17:36:12 by pgorner           #+#    #+#             */
-/*   Updated: 2023/01/10 17:55:24 by pgorner          ###   ########.fr       */
+/*   Updated: 2023/01/27 15:43:39 by pgorner          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #  define BUFFER_SIZE 100
 # endif
 
-#include "../libft.h"
+# include "../libft.h"
 # include <unistd.h>
 # include <stdlib.h>
 # include <stddef.h>
