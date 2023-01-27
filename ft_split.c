@@ -6,7 +6,7 @@
 /*   By: pgorner <pgorner@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 16:09:58 by pgorner           #+#    #+#             */
-/*   Updated: 2023/01/27 19:30:21 by pgorner          ###   ########.fr       */
+/*   Updated: 2023/01/27 19:31:06 by pgorner          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ int	ft_countword(char const *s, char c)
 	return (i);
 }
 
-/* static char	**ft_free(char **tab)
+static char	**ft_free(char **tab)
 {
 	int	i;
 
@@ -62,7 +62,7 @@ int	ft_countword(char const *s, char c)
 	}
 	free (tab);
 	return (NULL);
-} */
+}
 
 int	assign_values(size_t *i, int *j, int *index, char const *s)
 {
@@ -94,7 +94,7 @@ char	**ft_split(char const *s, char c)
 		{
 			tab[j] = ft_strnncpy(s, index, i);
 			if (!tab[j])
-				return (tab);
+				return (ft_free(tab));
 			j++;
 			index = -1;
 		}
