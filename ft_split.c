@@ -77,28 +77,28 @@ int	assign_values(size_t *i, int *j, int *index, char const *s)
 char	**ft_split(char const *s, char c)
 {
 	size_t	i;
+	size_t	k;
 	int		j;
 	char	**tab;
 	int		index;
 
+	k = ft_strlen(s);
 	if (assign_values(&i, &j, &index, s) == 1)
 		return (NULL);
 	tab = ft_calloc((ft_countword(s, c) + 1) * sizeof(char *), 1);
 	if (!tab)
 		return (NULL);
-	while (i <= ft_strlen(s))
+	while (i++ <= k)
 	{
 		if (s[i] != c && index < 0)
 			index = i;
-		else if ((s[i] == c || i == ft_strlen(s)) && index >= 0)
+		else if ((s[i] == c || i == k) && index >= 0)
 		{
 			tab[j] = ft_strnncpy(s, index, i);
-			if (!tab[j])
+			if (!tab[j++])
 				return (ft_free(tab));
-			j++;
 			index = -1;
 		}
-		i++;
 	}
 	return (tab);
 }
