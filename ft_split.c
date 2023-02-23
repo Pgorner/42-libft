@@ -66,7 +66,7 @@ static char	**ft_free(char **tab)
 
 int	assign_values(size_t *i, int *j, int *index, char const *s)
 {
-	*i = 0;
+	*i = -1;
 	*j = 0;
 	*index = -1;
 	if (!s)
@@ -88,7 +88,7 @@ char	**ft_split(char const *s, char c)
 	tab = ft_calloc((ft_countword(s, c) + 1) * sizeof(char *), 1);
 	if (!tab)
 		return (NULL);
-	while (i++ <= k)
+	while (++i <= k)
 	{
 		if (s[i] != c && index < 0)
 			index = i;
