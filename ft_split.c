@@ -85,10 +85,9 @@ char	**ft_split(char const *s, char c)
 	k = ft_strlen(s);
 	if (assign_values(&i, &j, &index, s) == 1)
 		return (NULL);
-	tab = NULL;
-	//tab = ft_calloc((ft_countword(s, c) + 1) * sizeof(char *), 1);
-	//if (!tab)
-	//	return (NULL);
+	tab = ft_calloc((ft_countword(s, c) + 1) * sizeof(char *), 1);
+	if (!tab)
+		return (NULL);
 	while (++i <= k)
 	{
 		if (s[i] != c && index < 0)
